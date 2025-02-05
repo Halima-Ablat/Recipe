@@ -1,0 +1,36 @@
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.food-recipe {
+  font-family: monospace;
+  font-size: 20px;
+  text-decoration: none;
+  color: black;
+}
+
+.input input{
+  padding: 10px;
+  border-radius: 10px;
+  border: none;
+  font-size: 16px;
+  box-shadow: 0px 2px 6px rgba(218, 153, 153, 0.3);
+}
+
+.home {
+  margin-right: 15px;
+  text-decoration: none;
+  color: black;
+  font-size: 16px;
+}
+
+.favorite{
+  text-decoration: none;
+  color: black;
+  font-size: 16px;
+}
+
+
+
