@@ -1,17 +1,25 @@
-import React from "react";
+import React, { useContext } from "react";
+import {NavLink} from 'react-router-dom'
+import { GlobalContext } from "./Context";
+
 
 function Navbar() {
+
+  const {searchParam, setSearchParam, handleSubmit} = useContext(GlobalContext);
+
+  console.log(searchParam)
+
   return (
     <div className="navbar">
       <div>
-        <a href="#"  className="food-recipe">FoodRecipe</a>
+        <NavLink to={'/'} className="food-recipe">FoodRecipe</NavLink>
       </div>
-      <div className="input">
-        <input type="text" placeholder="Enter Items..." />
-      </div>
+      <form className="input" onSubmit={handleSubmit}>
+        <input type="text" placeholder="Enter Items..." value={searchParam} onChange={(event) => setSearchParam(event.target.value)} />
+      </form>
       <div className="favorite">
-        <a href="#" className="home">Home</a>
-        <a href="#" className="favorite">favorites</a>
+        <NavLink to={'/'} className="home">Home</NavLink>
+        <NavLink to={'/favorites'} className="favorite">favorites</NavLink>
       </div>
     </div>
   );

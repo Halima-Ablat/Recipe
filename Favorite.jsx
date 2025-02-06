@@ -1,11 +1,11 @@
 import React from "react";
-import Navbar from "./Navbar";
 
 function Favorite() {
   return (
     <div>
-      <Navbar />
-      <div className="card mb-3" style={{maxWidth: '540px'}}>
+      <h1>hello</h1>
+{/*       
+      <div className="card mb-3" style={{ maxWidth: "540px" }}>
         <div className="row g-0">
           <div className="col-md-4">
             <img src="..." className="img-fluid rounded-start" alt="..." />
@@ -14,8 +14,8 @@ function Favorite() {
             <div className="card-body">
               <h5 className="card-title">Card title</h5>
               <a href="#" className="btn btn-dark">
-            REMOVE FROM FAVORITES
-          </a>
+                REMOVE FROM FAVORITES
+              </a>
               <p className="card-text">
                 This is a wider card with supporting text below as a natural
                 lead-in to additional content. This content is a little bit
@@ -27,7 +27,7 @@ function Favorite() {
             </div>
           </div>
         </div>
-      </div>
+      </div> */}
     </div>
   );
 }

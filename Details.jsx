@@ -1,13 +1,7 @@
-import React from 'react'
-import Navbar from './Navbar'
+import React from "react";
 
 function Details() {
-  return (
-    <div>
-      <Navbar/>
-      Details
-    </div>
-  )
+  return <div>Details</div>;
 }
 
-export default Details
+export default Details;
