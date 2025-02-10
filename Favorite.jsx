@@ -1,33 +1,43 @@
-import React from "react";
+import React, { useState, useContext } from "react";
+import { GlobalContext } from "./Context";
+import { NavLink } from "react-router-dom";
 
 function Favorite() {
+  const { favoritesList} = useContext(GlobalContext);
+
   return (
-    <div>
-      <h1>hello</h1>
-{/*       
-      <div className="card mb-3" style={{ maxWidth: "540px" }}>
-        <div className="row g-0">
-          <div className="col-md-4">
-            <img src="..." className="img-fluid rounded-start" alt="..." />
-          </div>
-          <div className="col-md-8">
-            <div className="card-body">
-              <h5 className="card-title">Card title</h5>
-              <a href="#" className="btn btn-dark">
-                REMOVE FROM FAVORITES
-              </a>
-              <p className="card-text">
-                This is a wider card with supporting text below as a natural
-                lead-in to additional content. This content is a little bit
-                longer.
-              </p>
-              <p className="card-text">
-                <small className="text-muted">Last updated 3 mins ago</small>
-              </p>
+    <div className="container mt-5">
+      {favoritesList && favoritesList.length > 0 ? (
+        <div className="row row-cols-1 row-cols-md-3 g-4">
+          {favoritesList.map((recipeItem, id) => (
+            <div className="col" key={recipeItem?.id}>
+              <div className="card shadow-lg border-0  custom-card p-3">
+                <img 
+                  src={recipeItem?.image_url}
+                  className="card-img-top img-center "
+                  alt="..."
+                />
+                <div className="card-body">
+                  <span className="card-text">{recipeItem?.publisher}</span>
+                  <h5 className="card-title">{recipeItem?.title}</h5>
+                  <NavLink
+                    to={`/recipe-item/${recipeItem?.id}`}
+                    className="btn btn-dark mt-auto"
+                  >
+                    RECIPE DETAILS
+                  </NavLink>
+                </div>
+              </div>
             </div>
-          </div>
+          ))}
         </div>
-      </div> */}
+      ) : (
+        <div>
+          <p className="fs-1 fw-bold text-center mt-5">
+            Nothing is added in favorites!
+          </p>
+        </div>
+      )}
     </div>
   );
 }

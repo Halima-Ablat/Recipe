@@ -15,13 +15,13 @@ function Recipe() {
           {recipeList.map((recipe, id) => (
             <div className="col" key={recipe?.id}>
               <div className="card shadow-lg border-0  custom-card p-3">
-                <img
+                <img 
                   src={recipe?.image_url}
                   className="card-img-top img-center "
                   alt="..."
                 />
                 <div className="card-body">
-                <span className="card-text">{recipe?.publisher}</span>
+                  <span className="card-text">{recipe?.publisher}</span>
                   <h5 className="card-title">{recipe?.title}</h5>
                   <NavLink
                     to={`/recipe-item/${recipe?.id}`}
