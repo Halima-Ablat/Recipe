@@ -22,7 +22,7 @@ export default function GlobalState({ children }) {
       );
       const data = await response.json();
 
-      console.log(data);
+      // console.log(data);
 
       if (data?.data?.recipes) {
         setRecipeList(data?.data?.recipes);
